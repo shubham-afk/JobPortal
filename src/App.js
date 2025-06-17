@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Home from "./pages/Home";
+import Homepage from "./pages/homepage";
+import AddJob from "./pages/AddJob";
+import Jobs from "./pages/Jobs";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Router>
+    //   <Navbar />
+    //   <Routes>
+    //     <Route path="/" element={<Homepage />} />
+    //     <Route path="/home" element={<Home />} />
+    //     <Route path="/add-job" element={<AddJob />} />
+    //     <Route path="/jobs" element={<Jobs />} />
+    //   </Routes>
+    // </Router>
+
+    <Router>
+      <Routes>
+        {/* Landing page without Navbar */}
+        <Route path="/" element={<Homepage />} />
+        {/* All other pages with Navbar */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/add-job" element={<AddJob />} />
+                <Route path="/jobs" element={<Jobs />} />
+              </Routes>
+            </>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
