@@ -21,9 +21,7 @@ function App() {
 
     <Router>
       <Routes>
-        {/* Landing page without Navbar */}
         <Route path="/" element={<Homepage />} />
-        {/* All other pages with Navbar */}
         <Route
           path="*"
           element={

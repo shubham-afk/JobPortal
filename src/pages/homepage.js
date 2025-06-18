@@ -16,7 +16,6 @@ const Homepage = () => {
         position: "relative",
       }}
     >
-      {/* Title at the top */}
       <Box
         sx={{
           display: "flex",
@@ -47,7 +46,6 @@ const Homepage = () => {
         </Typography>
       </Box>
 
-      {/* Card with image and button */}
       <Box
         sx={{
           display: "flex",

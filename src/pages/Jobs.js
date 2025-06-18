@@ -61,7 +61,6 @@ const JobBoard = () => {
 
   return (
     <Box>
-      {/* Job Listings */}
       <Box px={4} py={2}>
         <JobCard
           title="UI/UX Designer"
